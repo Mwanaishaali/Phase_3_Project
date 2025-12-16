@@ -3,7 +3,6 @@
 **Problem Type:** Binary Classification  
 **Dataset:** [SyriaTel Customer Churn Dataset on Kaggle](https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-dataset)
 
----
 
 ## Overview
 
@@ -11,7 +10,6 @@ Customer churn is a major concern for telecommunications companies, as acquiring
 
 By accurately identifying potential churners, SyriaTel can proactively implement retention strategies to protect revenue and improve customer satisfaction.
 
----
 
 ## Business Understanding
 
@@ -23,7 +21,7 @@ By accurately identifying potential churners, SyriaTel can proactively implement
 - Machine learning can uncover complex patterns in usage, plans, and customer service interactions that simple rules cannot capture  
 - Actionable predictions allow targeted retention campaigns
 
----
+
 
 ## Data Understanding
 
@@ -40,7 +38,7 @@ By accurately identifying potential churners, SyriaTel can proactively implement
 - Need for preprocessing: encoding categorical variables, scaling numeric features, removing identifiers (state, phone number)  
 - Class imbalance (more non-churners than churners) must be addressed in evaluation
 
----
+
 
 ## Modeling
 
@@ -65,7 +63,7 @@ An iterative modeling approach was used with four models:
 - `min_samples_leaf=20`  
 - `class_weight='balanced'`  
 
----
+
 
 ## Evaluation
 
@@ -74,12 +72,11 @@ An iterative modeling approach was used with four models:
 
 | Model                        | Recall | Precision | F1 Score | Accuracy |
 |-------------------------------|--------|-----------|----------|----------|
-| Baseline Logistic Regression   | 0.68   | 0.75      | 0.71     | 0.78     |
-| Tuned Logistic Regression      | 0.70   | 0.74      | 0.72     | 0.79     |
-| Baseline Decision Tree         | 0.72   | 0.70      | 0.71     | 0.78     |
-| Tuned Decision Tree            | 0.78   | 0.73      | 0.75     | 0.81     |
+| Baseline Logistic Regression   | 0.192   | 0.571     | 0.287    | 0.857     |
+| Tuned Logistic Regression      | 0.184  | 0.589     | 0.280    | 0.859     |
+| Baseline Decision Tree         | 0.744  | 0.679    | 0.709    | 0.909     |
+| Tuned Decision Tree            | 0.768   | 0.750     | 0.759     | 0.927    |
 
-> **Note:** Replace above values with actual results from your notebook.
 
 ### Confusion Matrix
 
@@ -88,18 +85,19 @@ Below is the confusion matrix for the **final model (Tuned Decision Tree)**, sho
 ![Confusion Matrix](Image/confusion_matrix.png)
 
 **Counts:**  
-- True Negatives: 500  
-- False Positives: 50  
-- False Negatives: 40  
-- True Positives: 200
+- True Negatives: 667
+- False Positives: 32 
+- False Negatives: 29 
+- True Positives: 96
 
 > The confusion matrix helps visualize model performance and explains why recall was prioritized.
 
----
+
 
 ## Conclusion
 
 **Recommended Model:** Tuned Decision Tree  
+check other models in [notebook](index.ipynb)
 
 **Rationale:**  
 - Highest recall ensures most at-risk customers are correctly identified  
@@ -116,7 +114,5 @@ Below is the confusion matrix for the **final model (Tuned Decision Tree)**, sho
 3. Integrate predictions with retention strategies (offers, support improvements)  
 4. Consider feature enrichment to further improve predictive power  
 
----
 
-## Repository Structure
 
