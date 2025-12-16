@@ -97,7 +97,7 @@ Below is the confusion matrix for the **final model (Tuned Decision Tree)**, sho
 ## Conclusion
 
 **Recommended Model:** Tuned Decision Tree  
-check other models in [notebook](index.ipynb)
+*_(check other models in [notebook](index.ipynb))*_
 
 **Rationale:**  
 - Highest recall ensures most at-risk customers are correctly identified  
